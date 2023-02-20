@@ -1,0 +1,62 @@
+<!-- <mvc:View controllerName="front.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Button text="{i18n>showHelloButtonText}" press="onShowHello" />
+            <Text text="Hello World" />
+            <Input value="{/recipient/name}" 
+                   width="50%"
+                   description="Hello {/recipient/name}"
+                   valueLiveUpdate="true" />
+
+        </content>        
+    </Page>
+</mvc:View>
+ -->
+
+
+<mvc:View controllerName="front.controller.App"
+          xmlns="sap.m" 
+          xmlns:mvc="sap.ui.core.mvc"
+          displayBlock="true">
+      <Shell>
+            <App>
+                  <pages>
+                        <Page title="{i18n>appTitle}">
+                              <headerContent>
+                              <Button id="helloDialogHeader" 
+                                    icon="sap-icon://action" 
+                                    press=".onOpenDialogHeader" 
+                                    class="sapUiSmallMarginEnd" />
+                              </headerContent>
+                              <content>
+                                    <mvc:XMLView viewName="front/view/HelloPanel"/>
+                                    <mvc:XMLView viewName="front/view/InvoicesList"/>
+                              </content>                  
+                        </Page>
+                  </pages>
+            </App>
+      </Shell>
+
+</mvc:View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
