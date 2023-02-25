@@ -45,6 +45,17 @@ function (Controller, JSONModel,InvoicesFormatter, Filter, FilterOperator) {
             const oBinding = oList.getBinding("items")
             oBinding.filter(aFilter)
 
+        },
+        navigateToDetails : function(oEvent){
+
+            const oItem = oEvent.getSource()
+            const oRouter = sap.ui.core.UIComponent.getRouterFor(this)
+            oRouter.navTo("Details",{
+                //invoicePath : oItem.getBindingContext("northwind").getProperty("OrderID")
+                invoicePath : window.encodeURIComponent(oItem.getBindingContext("northwind").getPath().substr(1))
+            })
+
+
         }
 
     })

@@ -1,0 +1,19 @@
+<mvc:View controllerName="front.controller.Details"
+          xmlns="sap.m" 
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns:core="sap.ui.core"
+          xmlns:custom="front.control"
+          displayBlock="true">
+            <Page title="{i18n>detailsTitle}" showNavButton="true" navButtonPress=".onNavBack">
+                <ObjectHeader title="{northwind>Quantity} x {northwind>ProductName}" >
+                  <attributes>
+                    <ObjectAttribute text="{northwind>ShipName}" />
+                    <ObjectAttribute text="{northwind>ShipAddress}" />
+                    <ObjectAttribute text="{northwind>ShipCity}" />
+                    <ObjectAttribute text="{northwind>ShipRegion}" />
+                    
+                  </attributes>
+                </ObjectHeader>
+                <custom:ProductRating id="rating" class="sapUiSmallMarginEnd" change=".onRatingChange" />
+            </Page>
+</mvc:View>
