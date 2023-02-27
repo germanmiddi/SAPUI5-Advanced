@@ -7,6 +7,8 @@ sap.ui.define(
   
       return BaseController.extend("front.controller.App", {
         onInit() {
+          this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass())
+
         }
       });
     }

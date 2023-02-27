@@ -91,7 +91,7 @@ sap.ui.define([
             },
             
             reset : function (){
-                const oResourceBundle = this.getModel("i18n").getResourceBundle
+                const oResourceBundle = this.getModel("i18n").getResourceBundle()
                 this.setValue(0)
                 this.getAggregation("_rating").setEnabled(true)
                 this.getAggregation("_button").setEnabled(true)
@@ -99,7 +99,7 @@ sap.ui.define([
 
             },
 
-            setValue: function(){
+            setValue: function(fValue){
                 this.setProperty("value", fValue, true)
                 this.getAggregation("_rating").setValue(fValue)
             },

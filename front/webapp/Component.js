@@ -6,7 +6,7 @@
          "sap/ui/core/UIComponent",
          "sap/ui/Device",
          "front/model/models",
-         "./controller/HelloDialog.controller"         
+         "./controller/HelloDialog.controller"
      ],
      function (UIComponent, Device, models, HelloDialog) {
          "use strict";
@@ -19,6 +19,7 @@
               * @public
               * @override
               */
+            
              init: function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
@@ -31,17 +32,25 @@
                 this.setModel(models.createDeviceModel(), "device");
 
                 this._helloDialog = new HelloDialog(this.getRootControl())
-             },
+            },
 
-             exit: function (){
+            exit: function (){
                 this._helloDialog.destroy()
                 delete this._helloDialog
             },
 
             openHelloDialog: function(){
                 this._helloDialog.open()
-            }             
+            },
 
+            getContentDensityClass : function(){
+                if (!Device.support.touch){
+                    this._sContentDensityClass = "sapUiSizeCompact"
+                }else{
+                    this._sContentDensityClass = "sapUiSizeCozy"
+                }
+                return this._sContentDensityClass
+            }             
          });
      }
  );
